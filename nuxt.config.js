@@ -1,5 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  mode: 'static',
+  router: {
+     base: '/blog-page-task/'
+  },
   head: {
     title: 'blog-page-task',
     htmlAttrs: {
