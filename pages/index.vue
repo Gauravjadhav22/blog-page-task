@@ -118,34 +118,34 @@
                   class="self-center flex mt-14 items-baseline shadow shadow-white w-fit p-0 justify-start gap-5"
                 >
                   <img
-                    :src="require('~/assets/comment.png')"
+                    :src="commentLogo"
                     class="w-7 m-2 hover:shadow-lg hover:border-2 p-1 hover:shadow-amber-300 text-white"
                     alt="My Image"
                   />
                   <img
                     v-if="post.isliked"
-                    :src="require('~/assets/thumb-up-black.png')"
+                    :src="thumbUpBlack"
                     class="w-7 m-2 hover:shadow-lg hover:border-2 p-1 hover:shadow-amber-300 text-white"
                     alt="My Image"
                     @click="isLikedChanged(index)"
                   />
                   <img
                     v-else
-                    :src="require('~/assets/thumbs-up.png')"
+                    :src="thumbUpwhite"
                     class="w-7 m-2 hover:shadow-lg hover:border-2 p-1 hover:shadow-amber-300 text-white"
                     alt="My Image"
                     @click="isLikedChanged(index)"
                   />
                   <img
                     v-if="post.disliked"
-                    :src="require('~/assets/dislike.png')"
+                    :src="dislikeLogo"
                     class="w-7 m-2 hover:shadow-lg hover:border-2 p-1 hover:shadow-amber-300 text-white"
                     alt="My Image"
                     @click="disLikedChanged(index)"
                   />
                   <img
                     v-else
-                    :src="require('~/assets/thumb-down.png')"
+                    :src="thumbDown"
                     class="w-7 m-2 hover:shadow-lg hover:border-2 p-1 hover:shadow-amber-300 text-white"
                     alt="My Image"
                     @click="disLikedChanged(index)"
@@ -193,11 +193,22 @@
 </template>
 <style scoped>
 @import "@/assets/main.css";
+
+
+
 </style>
 <script>
+
+import thumbUpBlack from '~/assets/thumb-up-black.png';
+import thumbUpwhite from '~/assets/thumbs-up.png';
+import thumbDown from '~/assets/thumb-down.png'
+import dislikeLogo from '~/assets/dislike.png'
+import commentLogo from '~/assets/comment.png'
+
 export default {
   data() {
     return {
+      thumbUpBlack,thumbUpwhite,thumbDown,dislikeLogo,commentLogo,
       darkMode: false,
       mobileMenuOpen: false,
       categories: ["Category 1", "Category 2", "Category 3"],
@@ -229,6 +240,7 @@ export default {
       ],
     };
   },
+
   methods: {
     toggleDarkMode() {
       this.darkMode = !this.darkMode;
